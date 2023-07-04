@@ -91,7 +91,7 @@ while True:
                 api_id = int(account[0])
                 api_hash = str(account[1])
                 phone = str(account[2])
-                client = TelegramClient(f'sessions\\{phone}', api_id, api_hash)
+                client = TelegramClient(f'sessions_{phone}', api_id, api_hash)
                 client.connect()
                 if not client.is_user_authorized():
                     try:
@@ -152,7 +152,7 @@ while True:
         phone = str(accs[index][2])
         session_file = phone + '.session'
         if os.name == 'nt':
-            os.system(f'del sessions\\{session_file}')
+            os.system(f'del sessions_{session_file}')
         else:
             os.system(f'rm sessions/{session_file}')
         del accs[index]

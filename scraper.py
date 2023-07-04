@@ -65,7 +65,7 @@ api_id = accs[ind][0]
 api_hash = accs[ind][1]
 phone = accs[ind][2]
 group_name = input(f"Enter the name of the group without the @: {r}")
-c = TelegramClient(f'sessions\\{phone}', api_id, api_hash)
+c = TelegramClient(f'sessions_{phone}', api_id, api_hash)
 c.connect()
 if not c.is_user_authorized():
     try:

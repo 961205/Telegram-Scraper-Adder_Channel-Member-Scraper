@@ -70,7 +70,7 @@ with open(file, encoding='UTF-8') as f:
         user['group'] = row[3]
         user['group_id'] = row[4]
         users.append(user)
-client = TelegramClient(f'sessions\\{phone}', api_id, api_hash)
+client = TelegramClient(f'sessions_{phone}', api_id, api_hash)
 client.connect()
 time.sleep(1.5)
 target_group = client.get_entity(group)

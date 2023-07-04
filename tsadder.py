@@ -81,7 +81,7 @@ for a in accounts:
     iD = int(a[0])
     Hash = str(a[1])
     phn = str(a[2])
-    clnt = TelegramClient(f'sessions\\{phn}', iD, Hash)
+    clnt = TelegramClient(f'sessions_{phn}', iD, Hash)
     clnt.connect()
     banned = []
     if not clnt.is_user_authorized():
@@ -113,7 +113,7 @@ for account in accounts:
     api_id = int(account[0])
     api_hash = str(account[1])
     phone = str(account[2])
-    client = TelegramClient(f'sessions\\{phone}', api_id, api_hash)
+    client = TelegramClient(f'sessions_{phone}', api_id, api_hash)
     client.connect()
     try:
         username = client.get_entity(group)
